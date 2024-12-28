@@ -3,12 +3,13 @@ using Zenject;
 
 namespace ProjectRuntime.Behavior
 {
-    public class CameraModBehavior : IInitializable
+    public sealed class CameraModBehavior : IInitializable
     {
         [Inject] private ICameraStorage CameraStorage { get; }
 
         public void Initialize()
         {
+            CameraStorage.LoadCamera();
         }
     }
 }

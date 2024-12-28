@@ -4,7 +4,7 @@ using Zenject;
 
 namespace ProjectRuntime.Installer
 {
-    public class JsonModInstall : MonoInstaller<JsonModInstall>
+    public sealed class JsonModInstall : MonoInstaller<JsonModInstall>
     {
         public override void InstallBindings()
         {
