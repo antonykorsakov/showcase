@@ -5,7 +5,7 @@ using UnityEngine;
 using Zenject;
 using UEditor = UnityEditor.Editor;
 
-namespace Mindwood.Product.ColoringBook.Editor
+namespace Tetris.Editor
 {
     [CustomEditor(typeof(ProjectContext))]
     public class ProjectContextEditor : UEditor
