@@ -5,7 +5,7 @@ using UnityEngine;
 using Zenject;
 using UEditor = UnityEditor.Editor;
 
-namespace Tetris.Editor
+namespace ProjectEditor
 {
     [CustomEditor(typeof(ProjectContext))]
     public class ProjectContextEditor : UEditor
