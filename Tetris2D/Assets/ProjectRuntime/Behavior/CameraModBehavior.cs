@@ -11,7 +11,7 @@ namespace ProjectRuntime.Behavior
 
         public void Initialize()
         {
-            CameraStorage.SetGameplayCamera();
+            // CameraStorage.SetGameplayCamera();
 
             UiController.PanelsContainerSetupSuccessEvent += uiPanelsContainer
                 => CameraStorage.SetUiCamera(uiPanelsContainer.UiCamera);

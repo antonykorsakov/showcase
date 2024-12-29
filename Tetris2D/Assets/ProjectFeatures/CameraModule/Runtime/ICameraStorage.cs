@@ -1,4 +1,5 @@
 using System;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 namespace ProjectFeatures.CameraModule.Runtime
@@ -12,7 +13,7 @@ namespace ProjectFeatures.CameraModule.Runtime
         event Action CamerasSetupFailureEvent;
         event Action CamerasSetupSuccessEvent;
 
-        void SetGameplayCamera();
+        UniTask SetGameplayCamera();
         void SetUiCamera(Camera uiCamera);
     }
 }

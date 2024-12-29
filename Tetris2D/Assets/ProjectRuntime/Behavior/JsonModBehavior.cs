@@ -10,7 +10,7 @@ namespace ProjectRuntime.Behavior
 
         public void Initialize()
         {
-            Debug.LogError(JsonController.GetType());
+            // Debug.LogError(JsonController.GetType());
         }
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UObject = UnityEngine.Object;
 
@@ -20,7 +21,7 @@ namespace ProjectFeatures.UiModule.Runtime
         public event Action PanelsContainerSetupFailureEvent;
         public event Action<UiPanelsContainer> PanelsContainerSetupSuccessEvent;
 
-        public async void LoadAndSetupUiPanelsContainer()
+        public async UniTask LoadAndSetupUiPanelsContainer()
         {
             try
             {

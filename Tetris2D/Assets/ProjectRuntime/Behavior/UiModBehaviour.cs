@@ -9,7 +9,7 @@ namespace ProjectRuntime.Behavior
 
         public void Initialize()
         {
-            UiController.LoadAndSetupUiPanelsContainer();
+            // UiController.LoadAndSetupUiPanelsContainer();
         }
     }
 }

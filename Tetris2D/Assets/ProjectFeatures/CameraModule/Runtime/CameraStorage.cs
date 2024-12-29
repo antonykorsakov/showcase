@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UObject = UnityEngine.Object;
@@ -23,7 +24,7 @@ namespace ProjectFeatures.CameraModule.Runtime
         public event Action CamerasSetupFailureEvent;
         public event Action CamerasSetupSuccessEvent;
 
-        public async void SetGameplayCamera()
+        public async UniTask SetGameplayCamera()
         {
             try
             {
