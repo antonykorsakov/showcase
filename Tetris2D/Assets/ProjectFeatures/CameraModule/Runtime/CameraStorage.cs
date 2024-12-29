@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using Cysharp.Threading.Tasks;
+using ProjectFeatures.CoreModule.Runtime;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UObject = UnityEngine.Object;
@@ -17,6 +19,8 @@ namespace ProjectFeatures.CameraModule.Runtime
             _config = config;
         }
 
+        public ICameraConfig Config => _config;
+
         public Camera GameplayCamera { get; private set; }
         public Camera UiCamera { get; private set; }
 
@@ -24,18 +28,14 @@ namespace ProjectFeatures.CameraModule.Runtime
         public event Action CamerasSetupFailureEvent;
         public event Action CamerasSetupSuccessEvent;
 
-        public async UniTask SetGameplayCamera()
+        public async UniTask SetGameplayCamera(CancellationToken cancellationToken)
         {
             try
             {
-                var items = await UObject.InstantiateAsync(_config.GameplayCamera);
-                if (items is not { Length: 1 })
-                {
-                    CamerasSetupFailureEvent?.Invoke();
-                    return;
-                }
-
-                SetGameplayCamera(items[0]);
+                var item = await InstantiateFactory.InstantiateAsync(_config.GameplayCamera, null, null, null,
+                    cancellationToken);
+                cancellationToken.ThrowIfCancellationRequested();
+                SetGameplayCamera(item);
             }
             catch (Exception ex)
             {

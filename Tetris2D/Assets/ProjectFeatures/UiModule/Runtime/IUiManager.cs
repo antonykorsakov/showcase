@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ProjectFeatures.UiModule.Runtime
 {
-    public interface IUiController
+    public interface IUiManager
     {
         Canvas Canvas { get; }
         Transform Container { get; }

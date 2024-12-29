@@ -12,7 +12,10 @@ namespace ProjectRuntime.Installer
         public override void InstallBindings()
         {
             Container.BindInterfacesTo<UiModBehaviour>().AsSingle();
-            Container.BindInterfacesTo<UiController>().AsSingle().WithArguments(_config);
+            Container.BindInterfacesTo<UiManager>().AsSingle().WithArguments(_config);
+
+            // panels
+            Container.BindInterfacesTo<MainUiController>().AsSingle();
         }
     }
 }

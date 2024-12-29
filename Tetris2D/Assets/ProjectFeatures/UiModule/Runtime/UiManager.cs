@@ -5,11 +5,11 @@ using UObject = UnityEngine.Object;
 
 namespace ProjectFeatures.UiModule.Runtime
 {
-    public sealed class UiController : IUiController
+    public sealed class UiManager : IUiManager
     {
         private readonly IUiConfig _config;
 
-        public UiController(IUiConfig config)
+        public UiManager(IUiConfig config)
         {
             _config = config;
         }

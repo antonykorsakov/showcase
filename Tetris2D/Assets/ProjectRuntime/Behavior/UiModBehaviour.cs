@@ -5,7 +5,7 @@ namespace ProjectRuntime.Behavior
 {
     public class UiModBehaviour : IInitializable
     {
-        [Inject] private IUiController UiController { get; }
+        [Inject] private IUiManager UiManager { get; }
 
         public void Initialize()
         {

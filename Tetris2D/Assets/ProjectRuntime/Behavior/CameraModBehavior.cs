@@ -7,13 +7,13 @@ namespace ProjectRuntime.Behavior
     public sealed class CameraModBehavior : IInitializable
     {
         [Inject] private ICameraStorage CameraStorage { get; }
-        [Inject] private IUiController UiController { get; }
+        [Inject] private IUiManager UiManager { get; }
 
         public void Initialize()
         {
             // CameraStorage.SetGameplayCamera();
 
-            UiController.PanelsContainerSetupSuccessEvent += uiPanelsContainer
+            UiManager.PanelsContainerSetupSuccessEvent += uiPanelsContainer
                 => CameraStorage.SetUiCamera(uiPanelsContainer.UiCamera);
         }
     }
