@@ -10,7 +10,7 @@ namespace ProjectFeatures.UiModule.Runtime
 
         event Action PanelsContainerLoadedFailureEvent;
         event Action PanelsContainerSetupFailureEvent;
-        event Action PanelsContainerSetupSuccessEvent;
+        event Action<UiPanelsContainer> PanelsContainerSetupSuccessEvent;
 
         void LoadAndSetupUiPanelsContainer();
     }

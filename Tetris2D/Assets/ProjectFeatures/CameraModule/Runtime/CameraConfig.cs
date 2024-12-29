@@ -7,8 +7,8 @@ namespace ProjectRuntime.FeatureConfig
         menuName = "Configs/" + nameof(CameraConfig), order = 'C')]
     public class CameraConfig : ScriptableObject, ICameraConfig
     {
-        [SerializeField] private CameraStack _cameraStack;
+        [SerializeField] private Camera _gameplayCamera;
 
-        public CameraStack CameraStack => _cameraStack;
+        public Camera GameplayCamera => _gameplayCamera;
     }
 }

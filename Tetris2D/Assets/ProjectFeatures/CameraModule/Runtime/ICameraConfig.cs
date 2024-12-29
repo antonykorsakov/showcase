@@ -1,7 +1,9 @@
+using UnityEngine;
+
 namespace ProjectFeatures.CameraModule.Runtime
 {
     public interface ICameraConfig
     {
-        CameraStack CameraStack { get; }
+        Camera GameplayCamera { get; }
     }
 }

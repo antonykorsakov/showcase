@@ -18,14 +18,20 @@ namespace ProjectFeatures.UiModule.Runtime
 
         public event Action PanelsContainerLoadedFailureEvent;
         public event Action PanelsContainerSetupFailureEvent;
-        public event Action PanelsContainerSetupSuccessEvent;
+        public event Action<UiPanelsContainer> PanelsContainerSetupSuccessEvent;
 
         public async void LoadAndSetupUiPanelsContainer()
         {
             try
             {
-                var uiPanelsContainers = await UObject.InstantiateAsync(_config.UiPanelsContainer);
-                SetupContainer(uiPanelsContainers);
+                var items = await UObject.InstantiateAsync(_config.UiPanelsContainer);
+                if (items is not { Length: 1 })
+                {
+                    PanelsContainerSetupFailureEvent?.Invoke();
+                    return;
+                }
+                
+                SetupContainer(items[0]);
             }
             catch (Exception ex)
             {
@@ -33,17 +39,11 @@ namespace ProjectFeatures.UiModule.Runtime
             }
         }
 
-        private void SetupContainer(UiPanelsContainer[] uiPanelsContainers)
+        private void SetupContainer(UiPanelsContainer uiPanelsContainers)
         {
-            if (uiPanelsContainers is not { Length: 1 })
-            {
-                PanelsContainerSetupFailureEvent?.Invoke();
-                return;
-            }
-
-            Canvas = uiPanelsContainers[0].Canvas;
+            Canvas = uiPanelsContainers.Canvas;
             Container = Canvas.transform;
-            PanelsContainerSetupSuccessEvent?.Invoke();
+            PanelsContainerSetupSuccessEvent?.Invoke(uiPanelsContainers);
         }
     }
 }

@@ -12,6 +12,7 @@ namespace ProjectFeatures.CameraModule.Runtime
         event Action CamerasSetupFailureEvent;
         event Action CamerasSetupSuccessEvent;
 
-        void LoadAndSetupCamera();
+        void SetGameplayCamera();
+        void SetUiCamera(Camera uiCamera);
     }
 }

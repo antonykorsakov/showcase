@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dc0afc9d1c7a85488a4bfcb90bfb07d, type: 3}
   m_Name: CameraConfig
   m_EditorClassIdentifier: 
-  _cameraStack: {fileID: 7073922204568596458, guid: 88bd73d237e6a6844b812c548d7a1bdd, type: 3}
+  _gameplayCamera: {fileID: 5428130744571135966, guid: 1b821a34573f67e46963e811f7ddb9be, type: 3}
