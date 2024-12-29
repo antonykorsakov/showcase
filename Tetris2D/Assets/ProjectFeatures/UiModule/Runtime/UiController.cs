@@ -30,8 +30,11 @@ namespace ProjectFeatures.UiModule.Runtime
                     PanelsContainerSetupFailureEvent?.Invoke();
                     return;
                 }
-                
+
                 SetupContainer(items[0]);
+
+                var xItems = await UObject.InstantiateAsync(_config.MainUiPanel, Container);
+                xItems[0].transform.localPosition = Vector3.zero;
             }
             catch (Exception ex)
             {
