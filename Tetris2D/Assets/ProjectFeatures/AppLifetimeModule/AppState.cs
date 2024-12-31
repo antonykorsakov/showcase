@@ -5,7 +5,12 @@ namespace ProjectFeatures.AppLifetimeModule
         /// <summary>
         /// Waiting for Unity to initialize.
         /// </summary>
-        Initializing = 0,
+        AppInitializing = 0,
+        
+        /// <summary>
+        /// Waiting for approve GDPR (General Data Protection Regulation)
+        /// </summary>
+        GDPR,
 
         /// <summary>
         /// The state where the player can select a game (e.g., Main UI Panel).

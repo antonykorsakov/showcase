@@ -1,10 +1,6 @@
-using System.Threading;
-using Cysharp.Threading.Tasks;
 using ProjectFeatures.AppLifetimeModule;
-using ProjectFeatures.CameraModule.Runtime;
-using ProjectFeatures.JsonModule.Runtime;
 using ProjectFeatures.UiModule.Runtime;
-using UnityEngine;
+using ProjectFeatures.ZenjectModule.Runtime;
 using Zenject;
 
 namespace ProjectRuntime.Behavior
@@ -12,38 +8,31 @@ namespace ProjectRuntime.Behavior
     public class AppLifetimeModBehavior : IInitializable
     {
         [Inject] private IAppLifetimeController AppLifetimeController { get; }
-        [Inject] private ICameraStorage CameraStorage { get; }
-        [Inject] private IJsonController JsonController { get; }
-        [Inject] private IUiManager UiManager { get; }
         [Inject] private IMainUiController MainUiController { get; }
+        [Inject] private IZenjectLastController ZenjectLastController { get; }
 
         public void Initialize()
         {
-            LaunchApplication();
-            MainUiController.TetrisButtonClickEvent += LaunchTetris;
-            MainUiController.Match3ButtonClickEvent += LaunchMatch3;
-        }
-
-        private async void LaunchApplication()
-        {
-            var cancellationToken = new CancellationToken(false);
-
-            CameraStorage.SetGameplayCamera(cancellationToken).Forget();
-            // await UniTask.Delay(3000);
-            await UiManager.LoadAndSetupUiPanelsContainer();
-            var item = Resources.FindObjectsOfTypeAll<MainUiPanel>()[0];
-            MainUiController.SetPanel(item);
-            MainUiController.FadeInPanel();
-        }
-
-        private void LaunchTetris()
-        {
+            ZenjectLastController.InitializedEvent += () =>
+            {
+                if (AppLifetimeController.AppState == AppState.AppInitializing)
+                    AppLifetimeController.SetState(AppState.GDPR);
+                
+                if (AppLifetimeController.AppState == AppState.GDPR)
+                    AppLifetimeController.SetState(AppState.GameSelection);
+            };
             
-        }
-        
-        private void LaunchMatch3()
-        {
+            MainUiController.TetrisButtonClickEvent += () =>
+            {
+                if (AppLifetimeController.AppState == AppState.GameSelection)
+                    AppLifetimeController.SetState(AppState.TetrisGameplay);
+            };
             
+            MainUiController.Match3ButtonClickEvent += () =>
+            {
+                if (AppLifetimeController.AppState == AppState.GameSelection)
+                    AppLifetimeController.SetState(AppState.Match3Gameplay);
+            };
         }
     }
 }
