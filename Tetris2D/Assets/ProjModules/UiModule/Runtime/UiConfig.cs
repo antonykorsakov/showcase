@@ -1,3 +1,4 @@
+using ProjModules.UiModule.Runtime.UiSplashPanel;
 using UnityEngine;
 
 namespace ProjectFeatures.UiModule.Runtime
@@ -7,9 +8,9 @@ namespace ProjectFeatures.UiModule.Runtime
     public class UiConfig : ScriptableObject, IUiConfig
     {
         [SerializeField] private UiSplashPanelView _uiSplashPanelView;
-        [SerializeField] private UiMainPanelView _uiMainPanelView;
+        
         
         public UiSplashPanelView UiSplashPanelView => _uiSplashPanelView;
-        public UiMainPanelView UiMainPanelView => _uiMainPanelView;
+        
     }
 }

@@ -1,5 +1,4 @@
-using ProjectFeatures.PrefabFactoryModule.Runtime;
-using ProjectFeatures.UiModule.Runtime;
+using ProjModules.PrefabFactoryModule.Runtime;
 
 namespace ProjModules.UiContainerModule.Runtime.Controller
 {

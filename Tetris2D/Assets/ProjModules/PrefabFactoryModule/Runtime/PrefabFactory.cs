@@ -4,7 +4,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UObject = UnityEngine.Object;
 
-namespace ProjectFeatures.PrefabFactoryModule.Runtime
+namespace ProjModules.PrefabFactoryModule.Runtime
 {
     public abstract class PrefabFactory<T> : IPrefabFactory<T>
         where T : Component

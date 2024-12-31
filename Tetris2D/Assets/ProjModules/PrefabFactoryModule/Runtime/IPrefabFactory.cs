@@ -2,7 +2,7 @@ using System;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace ProjectFeatures.PrefabFactoryModule.Runtime
+namespace ProjModules.PrefabFactoryModule.Runtime
 {
     public interface IPrefabFactory<T>
     {

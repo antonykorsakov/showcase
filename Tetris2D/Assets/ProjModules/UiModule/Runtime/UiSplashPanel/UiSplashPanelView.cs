@@ -1,5 +1,7 @@
-namespace ProjectFeatures.UiModule.Runtime
+using UnityEngine;
+
+namespace ProjModules.UiModule.Runtime.UiSplashPanel
 {
-    public class UiSplashPanelView : UiPanel
+    public class UiSplashPanelView : MonoBehaviour
     { }
 }

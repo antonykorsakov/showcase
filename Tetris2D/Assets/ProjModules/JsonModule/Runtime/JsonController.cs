@@ -1,4 +1,4 @@
-namespace ProjectFeatures.JsonModule.Runtime
+namespace ProjModules.JsonModule.Runtime
 {
     public class JsonController : IJsonController
     {
