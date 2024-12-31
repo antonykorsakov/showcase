@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace ProjectFeatures.UiModule.Runtime
+namespace ProjModules.UiContainerModule.Runtime
 {
-    public class UiPanelsContainerView : MonoBehaviour
+    public class UiContainerView : MonoBehaviour
     {
         [SerializeField] private Canvas _canvas;
         [SerializeField] private Camera _uiCamera;

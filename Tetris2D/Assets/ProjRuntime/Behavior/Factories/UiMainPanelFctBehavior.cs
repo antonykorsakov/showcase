@@ -2,6 +2,7 @@ using Cysharp.Threading.Tasks;
 using ProjectFeatures.AppLifetimeModule;
 using ProjectFeatures.PrefabFactoryModule.Runtime;
 using ProjectFeatures.UiModule.Runtime;
+using ProjModules.UiContainerModule.Runtime.Controller;
 using Zenject;
 
 namespace ProjectRuntime.Behavior
@@ -9,7 +10,7 @@ namespace ProjectRuntime.Behavior
     public class UiMainPanelFctBehavior : IInitializable
     {
         [Inject] private IAppLifetimeController AppLifetimeController { get; }
-        [Inject] private IUiPanelsContainerController UiPanelsContainerController { get; }
+        [Inject] private IUiContainerController UiContainerController { get; }
         [Inject] private IPrefabFactory<UiMainPanelView> Factory { get; }
 
         public void Initialize()
@@ -20,8 +21,8 @@ namespace ProjectRuntime.Behavior
                     Factory.CleanReferences();
             };
 
-            UiPanelsContainerController.SetEvent += () =>
-                Factory.Load(UiPanelsContainerController.Container).Forget();
+            UiContainerController.SetEvent += () =>
+                Factory.Load(UiContainerController.Container).Forget();
         }
     }
 }

@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
 
-namespace ProjectFeatures.UiModule.Runtime
+namespace ProjModules.UiContainerModule.Runtime.Controller
 {
-    public class UiPanelsContainerController : IUiPanelsContainerController
+    public class UiContainerController : IUiContainerController
     {
         public Canvas Canvas { get; private set; }
         public Transform Container { get; private set; }

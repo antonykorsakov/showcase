@@ -11,12 +11,6 @@ namespace ProjectRuntime.Installer
 
         public override void InstallBindings()
         {
-            // UiPanelsContainer
-            Container.BindInterfacesTo<UiPanelsContainerFactory>().AsSingle().WithArguments(_config.UiPanelsContainerView);
-            Container.BindInterfacesTo<UiPanelsContainerFctBehavior>().AsSingle();
-            Container.BindInterfacesTo<UiPanelsContainerController>().AsSingle();
-            Container.BindInterfacesTo<UiPanelsContainerBehavior>().AsSingle();
-
             // UiMainPanel
             Container.BindInterfacesTo<UiMainPanelFactory>().AsSingle().WithArguments(_config.UiMainPanelView);
             Container.BindInterfacesTo<UiMainPanelFctBehavior>().AsSingle();
