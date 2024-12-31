@@ -1,46 +1,22 @@
-using System;
 using System.Collections.Generic;
-using System.Threading;
-using Cysharp.Threading.Tasks;
-using ProjectFeatures.CoreModule.Runtime;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
-using UObject = UnityEngine.Object;
 
 namespace ProjectFeatures.CameraModule.Runtime
 {
     public class CameraStorage : ICameraStorage
     {
-        private readonly ICameraConfig _config;
         private List<Camera> _cameraStack;
-
-        public CameraStorage(ICameraConfig config)
-        {
-            _config = config;
-        }
-
-        public ICameraConfig Config => _config;
 
         public Camera GameplayCamera { get; private set; }
         public Camera UiCamera { get; private set; }
 
-        public event Action CamerasLoadedFailureEvent;
-        public event Action CamerasSetupFailureEvent;
-        public event Action CamerasSetupSuccessEvent;
-
-        public async UniTask SetGameplayCamera(CancellationToken cancellationToken)
+        public void SetGameplayCamera(Camera gameplayCamera)
         {
-            try
-            {
-                var item = await InstantiateFactory.InstantiateAsync(_config.GameplayCamera, null, null, null,
-                    cancellationToken);
-                cancellationToken.ThrowIfCancellationRequested();
-                SetGameplayCamera(item);
-            }
-            catch (Exception ex)
-            {
-                CamerasLoadedFailureEvent?.Invoke();
-            }
+            RemoveOverlayCamera();
+            GameplayCamera = gameplayCamera;
+            _cameraStack = gameplayCamera.GetUniversalAdditionalCameraData().cameraStack;
+            AddOverlayCamera();
         }
 
         public void SetUiCamera(Camera uiCamera)
@@ -49,15 +25,6 @@ namespace ProjectFeatures.CameraModule.Runtime
             UiCamera = uiCamera;
             AddOverlayCamera();
         }
-
-        private void SetGameplayCamera(Camera gameplayCamera)
-        {
-            RemoveOverlayCamera();
-            GameplayCamera = gameplayCamera;
-            _cameraStack = gameplayCamera.GetUniversalAdditionalCameraData().cameraStack;
-            AddOverlayCamera();
-        }
-
 
         private void AddOverlayCamera()
         {
@@ -68,7 +35,7 @@ namespace ProjectFeatures.CameraModule.Runtime
                 return;
 
             _cameraStack.Add(UiCamera);
-            CamerasSetupSuccessEvent?.Invoke();
+            // CamerasSetupSuccessEvent?.Invoke();
         }
 
         private void RemoveOverlayCamera()

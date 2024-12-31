@@ -13,6 +13,7 @@ namespace ProjectRuntime.Installer
         {
             Container.BindInterfacesTo<UiModBehaviour>().AsSingle();
             Container.BindInterfacesTo<UiManager>().AsSingle().WithArguments(_config);
+            Container.BindInterfacesTo<UiLoader>().AsSingle().WithArguments(_config);
 
             // panels
             Container.BindInterfacesTo<MainUiController>().AsSingle();

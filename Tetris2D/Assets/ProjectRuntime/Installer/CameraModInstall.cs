@@ -13,7 +13,8 @@ namespace ProjectRuntime.Installer
         public override void InstallBindings()
         {
             Container.BindInterfacesTo<CameraModBehavior>().AsSingle();
-            Container.BindInterfacesTo<CameraStorage>().AsSingle().WithArguments(_config);
+            Container.BindInterfacesTo<CameraStorage>().AsSingle();
+            Container.BindInterfacesTo<GameplayCameraLoader>().AsSingle().WithArguments(_config);
         }
     }
 }

@@ -9,27 +9,27 @@ namespace ProjectRuntime.Behavior
     public sealed class CameraModBehavior : IInitializable
     {
         [Inject] private ICameraStorage CameraStorage { get; }
-        [Inject] private IUiManager UiManager { get; }
+        [Inject] private IGameplayCameraLoader GameplayCameraLoader { get; }
+        [Inject] private IUiLoader UiLoader { get; }
 
         public void Initialize()
         {
-            var cancellationToken = new CancellationToken(false);
-            CameraStorage.SetGameplayCamera(cancellationToken).Forget();
+            GameplayCameraLoader.LoadedSuccessEvent += SetCameraStack;
+            UiLoader.LoadedSuccessEvent += SetCameraStack;
 
-            // CameraStorage.SetGameplayCamera();
-
-            UiManager.PanelsContainerSetupSuccessEvent += _ => SetCameraStack();
+            GameplayCameraLoader.Load();
         }
 
         private void SetCameraStack()
         {
-            if (CameraStorage.GameplayCamera == null)
+            if (GameplayCameraLoader.GameplayCamera == null)
                 return;
-            
-            if (UiManager.Canvas == null)
+
+            if (UiLoader.UiPanelsContainer == null)
                 return;
-            
-            // CameraStorage.SetUiCamera(uiPanelsContainer.UiCamera)
+
+            CameraStorage.SetGameplayCamera(GameplayCameraLoader.GameplayCamera);
+            CameraStorage.SetUiCamera(UiLoader.UiPanelsContainer.UiCamera);
         }
     }
 }
