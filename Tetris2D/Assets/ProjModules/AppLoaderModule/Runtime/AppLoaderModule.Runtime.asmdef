@@ -1,0 +1,17 @@
+{
+    "name": "AppLoaderModule.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:6607597278582554d9f6e7af7873fc43",
+        "PrefabInstantiatorModule.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
