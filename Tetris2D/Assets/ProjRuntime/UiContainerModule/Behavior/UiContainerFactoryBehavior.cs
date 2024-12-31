@@ -1,16 +1,14 @@
-using System;
 using Cysharp.Threading.Tasks;
 using ProjectFeatures.AppLifetimeModule;
-using ProjectFeatures.PrefabFactoryModule.Runtime;
-using ProjectFeatures.UiModule.Runtime;
+using ProjModules.UiContainerModule.Runtime.Controller;
 using Zenject;
 
-namespace ProjectRuntime.Behavior
+namespace ProjRuntime.UiContainerModule.Behavior
 {
-    public class UiPanelsContainerFctBehavior : IInitializable
+    public class UiContainerFactoryBehavior : IInitializable
     {
         [Inject] private IAppLifetimeController AppLifetimeController { get; }
-        [Inject] private IPrefabFactory<UiPanelsContainerView> Factory { get; }
+        [Inject] private IUiContainerFactory UiContainerFactory { get; }
 
         public void Initialize()
         {
@@ -22,11 +20,11 @@ namespace ProjectRuntime.Behavior
             switch (AppLifetimeController.AppState)
             {
                 case AppState.AppBaseItemsLoading:
-                    Factory.Load(null).Forget();
+                    UiContainerFactory.Load(null).Forget();
                     break;
 
                 case AppState.GameSelection:
-                    Factory.CleanReferences();
+                    UiContainerFactory.CleanReferences();
                     break;
             }
         }
