@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ec373c1f7914142a12ba858ff8e4b79, type: 3}
   m_Name: UiConfig
   m_EditorClassIdentifier: 
-  _uiPanelsContainer: {fileID: 6700951188859244051, guid: 87f92bab5ec12bc4085bce4cc84f6de9, type: 3}
-  _splashUiPanel: {fileID: 6841753414109775665, guid: 3d9df65b713f5374489338b2dac65a95, type: 3}
-  _mainUiPanel: {fileID: 6886412584187520128, guid: f06bcfebc60b6e54a8b6108a89512046, type: 3}
+  _uiPanelsContainerView: {fileID: 6700951188859244051, guid: 87f92bab5ec12bc4085bce4cc84f6de9, type: 3}
+  _uiSplashPanelView: {fileID: 6841753414109775665, guid: 3d9df65b713f5374489338b2dac65a95, type: 3}
+  _uiMainPanelView: {fileID: 6886412584187520128, guid: f06bcfebc60b6e54a8b6108a89512046, type: 3}

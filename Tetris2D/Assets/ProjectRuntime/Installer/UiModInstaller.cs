@@ -11,12 +11,16 @@ namespace ProjectRuntime.Installer
 
         public override void InstallBindings()
         {
-            Container.BindInterfacesTo<UiModBehaviour>().AsSingle();
-            Container.BindInterfacesTo<UiManager>().AsSingle().WithArguments(_config);
-            Container.BindInterfacesTo<UiLoader>().AsSingle().WithArguments(_config);
+            // UiPanelsContainer
+            Container.BindInterfacesTo<UiPanelsContainerFactory>().AsSingle().WithArguments(_config.UiPanelsContainerView);
+            Container.BindInterfacesTo<UiPanelsContainerFctBehavior>().AsSingle();
+            Container.BindInterfacesTo<UiPanelsContainerController>().AsSingle();
+            Container.BindInterfacesTo<UiPanelsContainerBehavior>().AsSingle();
 
-            // panels
-            Container.BindInterfacesTo<MainUiController>().AsSingle();
+            // UiMainPanel
+            Container.BindInterfacesTo<UiMainPanelFactory>().AsSingle().WithArguments(_config.UiMainPanelView);
+            Container.BindInterfacesTo<UiMainPanelFctBehavior>().AsSingle();
+            Container.BindInterfacesTo<UiMainPanelController>().AsSingle();
         }
     }
 }

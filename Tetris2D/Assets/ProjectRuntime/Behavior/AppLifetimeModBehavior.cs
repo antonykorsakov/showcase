@@ -8,7 +8,7 @@ namespace ProjectRuntime.Behavior
     public class AppLifetimeModBehavior : IInitializable
     {
         [Inject] private IAppLifetimeController AppLifetimeController { get; }
-        [Inject] private IMainUiController MainUiController { get; }
+        [Inject] private IUiMainPanelController UiMainPanelController { get; }
         [Inject] private IZenjectLastController ZenjectLastController { get; }
 
         public void Initialize()
@@ -16,19 +16,16 @@ namespace ProjectRuntime.Behavior
             ZenjectLastController.InitializedEvent += () =>
             {
                 if (AppLifetimeController.AppState == AppState.AppInitializing)
-                    AppLifetimeController.SetState(AppState.GDPR);
-                
-                if (AppLifetimeController.AppState == AppState.GDPR)
-                    AppLifetimeController.SetState(AppState.GameSelection);
+                    AppLifetimeController.SetState(AppState.AppBaseItemsLoading);
             };
-            
-            MainUiController.TetrisButtonClickEvent += () =>
+
+            UiMainPanelController.TetrisButtonClickEvent += () =>
             {
                 if (AppLifetimeController.AppState == AppState.GameSelection)
                     AppLifetimeController.SetState(AppState.TetrisGameplay);
             };
-            
-            MainUiController.Match3ButtonClickEvent += () =>
+
+            UiMainPanelController.Match3ButtonClickEvent += () =>
             {
                 if (AppLifetimeController.AppState == AppState.GameSelection)
                     AppLifetimeController.SetState(AppState.Match3Gameplay);

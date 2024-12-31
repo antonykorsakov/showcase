@@ -14,6 +14,7 @@ namespace ProjectFeatures.AppLifetimeModule
                 return;
 
             AppState = value;
+            AppStateChangedEvent?.Invoke();
         }
     }
 }
