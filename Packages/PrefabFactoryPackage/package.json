@@ -1,17 +1,13 @@
 {
   "name": "com.tony.prefab-factory",
   "version": "1.0.0",
-  "displayName": "Prefab Factory Package",
+  "displayName": "PrefabFactoryPackage",
   "description": "This is a package for make prefabs async",
   "unity": "6000.0",
-  "unityRelease": "32f1",
   "documentationUrl": "https://example.com/",
   "changelogUrl": "https://example.com/changelog.html",
   "licensesUrl": "https://example.com/licensing.html",
-  "dependencies": {
- },
- "keywords": [
-  ],
+  "dependencies": {},
   "author": {
     "name": "Tony",
     "email": "antony.korsakov@gmail.com",
