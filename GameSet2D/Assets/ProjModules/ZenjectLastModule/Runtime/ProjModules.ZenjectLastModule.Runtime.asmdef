@@ -1,5 +1,5 @@
 {
-    "name": "ZenjectLastModule.Runtime",
+    "name": "ProjModules.ZenjectLastModule.Runtime",
     "rootNamespace": "",
     "references": [],
     "includePlatforms": [],

@@ -2,10 +2,10 @@
     "name": "ProjModules.CameraModule.Runtime",
     "rootNamespace": "",
     "references": [
-        "GUID:f51ebe6a0ceec4240a699833d6309b23",
-        "GUID:15fc0a57446b3144c949da3e2b9737a9",
         "GUID:ef718ef7557de04429cea2c30a996aaa",
-        "GUID:6607597278582554d9f6e7af7873fc43"
+        "GUID:6607597278582554d9f6e7af7873fc43",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:15fc0a57446b3144c949da3e2b9737a9"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

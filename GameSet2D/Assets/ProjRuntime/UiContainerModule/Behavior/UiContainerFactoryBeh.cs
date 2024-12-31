@@ -1,5 +1,5 @@
 using Cysharp.Threading.Tasks;
-using ProjectFeatures.AppLifetimeModule;
+using ProjModules.AppLifetimeModule.Runtime;
 using ProjModules.UiContainerModule.Runtime.Controller;
 using Zenject;
 

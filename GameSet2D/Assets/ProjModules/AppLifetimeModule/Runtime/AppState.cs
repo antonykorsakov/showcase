@@ -1,4 +1,4 @@
-namespace ProjectFeatures.AppLifetimeModule
+namespace ProjModules.AppLifetimeModule.Runtime
 {
     public enum AppState
     {

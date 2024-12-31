@@ -1,6 +1,6 @@
 using System;
 
-namespace ProjectFeatures.AppLifetimeModule
+namespace ProjModules.AppLifetimeModule.Runtime
 {
     public sealed class AppLifetimeController : IAppLifetimeController
     {

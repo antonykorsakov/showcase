@@ -1,7 +1,6 @@
-using ProjectFeatures.AppLifetimeModule;
-using ProjectFeatures.UiModule.Runtime;
-using ProjectFeatures.ZenjectModule.Runtime;
+using ProjModules.AppLifetimeModule.Runtime;
 using ProjModules.UiMainPanel.Runtime.Controller;
+using ProjModules.ZenjectLastModule.Runtime;
 using Zenject;
 
 namespace ProjectRuntime.Behavior

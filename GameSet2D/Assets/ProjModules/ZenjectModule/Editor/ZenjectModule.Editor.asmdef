@@ -2,8 +2,8 @@
     "name": "ZenjectModule.Editor",
     "rootNamespace": "",
     "references": [
-        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4",
-        "GUID:d625ae0f10ee13248827ed8b0d971957"
+        "GUID:d625ae0f10ee13248827ed8b0d971957",
+        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4"
     ],
     "includePlatforms": [
         "Editor"

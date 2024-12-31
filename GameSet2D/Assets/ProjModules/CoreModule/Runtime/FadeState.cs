@@ -1,4 +1,4 @@
-namespace ProjectFeatures.CoreModule.Runtime
+namespace ProjModules.CoreModule.Runtime
 {
     public enum FadeState
     {

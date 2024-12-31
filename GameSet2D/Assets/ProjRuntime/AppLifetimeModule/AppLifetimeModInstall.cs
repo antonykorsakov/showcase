@@ -1,5 +1,5 @@
-using ProjectFeatures.AppLifetimeModule;
 using ProjectRuntime.Behavior;
+using ProjModules.AppLifetimeModule.Runtime;
 using Zenject;
 
 namespace ProjectRuntime.Installer

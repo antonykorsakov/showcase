@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dc0afc9d1c7a85488a4bfcb90bfb07d, type: 3}
-  m_Name: CameraConfig
+  m_Script: {fileID: 11500000, guid: 86841ebfb0ce482f82a8dedc83b763f7, type: 3}
+  m_Name: UiContainerConfig
   m_EditorClassIdentifier: 
-  _gameCamera: {fileID: 5428130744571135966, guid: 1b821a34573f67e46963e811f7ddb9be, type: 3}
+  _uiContainerView: {fileID: 6700951188859244051, guid: 87f92bab5ec12bc4085bce4cc84f6de9, type: 3}

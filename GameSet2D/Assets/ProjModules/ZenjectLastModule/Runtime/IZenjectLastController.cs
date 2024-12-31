@@ -1,6 +1,6 @@
 using System;
 
-namespace ProjectFeatures.ZenjectModule.Runtime
+namespace ProjModules.ZenjectLastModule.Runtime
 {
     public interface IZenjectLastController
     {

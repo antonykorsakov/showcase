@@ -1,4 +1,4 @@
-using ProjectFeatures.ZenjectModule.Runtime;
+using ProjModules.ZenjectLastModule.Runtime;
 using Zenject;
 
 namespace ProjRuntime.ZenjectLastModule
