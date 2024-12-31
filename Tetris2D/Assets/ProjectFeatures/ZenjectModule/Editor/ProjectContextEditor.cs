@@ -1,4 +1,5 @@
 using System;
+using ProjectFeatures.ZenjectModule.Runtime;
 using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;
@@ -40,7 +41,7 @@ namespace ProjectEditor
         private void SortAndMoveComponents(MonoInstaller[] components)
         {
             var arraySize = components.Length;
-            var lastElementName = "LastInstaller"; //nameof(LastInstaller);
+            var lastElementName = nameof(ZenjectLastController);
 
             for (int i = 0; i < arraySize - 1; i++)
             {

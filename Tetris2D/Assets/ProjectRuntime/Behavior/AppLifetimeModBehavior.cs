@@ -17,7 +17,14 @@ namespace ProjectRuntime.Behavior
         [Inject] private IUiManager UiManager { get; }
         [Inject] private IMainUiController MainUiController { get; }
 
-        public async void Initialize()
+        public void Initialize()
+        {
+            LaunchApplication();
+            MainUiController.TetrisButtonClickEvent += LaunchTetris;
+            MainUiController.Match3ButtonClickEvent += LaunchMatch3;
+        }
+
+        private async void LaunchApplication()
         {
             var cancellationToken = new CancellationToken(false);
 
@@ -27,6 +34,16 @@ namespace ProjectRuntime.Behavior
             var item = Resources.FindObjectsOfTypeAll<MainUiPanel>()[0];
             MainUiController.SetPanel(item);
             MainUiController.FadeInPanel();
+        }
+
+        private void LaunchTetris()
+        {
+            
+        }
+        
+        private void LaunchMatch3()
+        {
+            
         }
     }
 }
