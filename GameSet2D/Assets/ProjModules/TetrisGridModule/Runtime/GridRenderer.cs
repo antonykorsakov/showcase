@@ -3,7 +3,7 @@ using UnityEngine.Tilemaps;
 
 namespace ProjModules.TetrisGridModule.Runtime.Data
 {
-    public class TetrisGridView : MonoBehaviour
+    public class GridRenderer : MonoBehaviour
     {
         [SerializeField] private Tilemap _tilemap;
 

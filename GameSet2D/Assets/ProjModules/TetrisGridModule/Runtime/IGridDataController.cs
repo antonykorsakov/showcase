@@ -2,8 +2,11 @@ using ProjModules.TetrisGridModule.Runtime.Data;
 
 namespace ProjModules.TetrisGridModule.Runtime
 {
-    public interface ITetrisGridController
+    public interface IGridDataController
     {
+        int Width { get; }
+        int Height { get; }
+
         GridCellState GetCell(int x, int y);
 
         void AddTetromino(bool[,] tetromino, int minX, int minY);

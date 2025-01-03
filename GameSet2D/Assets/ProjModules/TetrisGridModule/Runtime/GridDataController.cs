@@ -3,31 +3,36 @@ using ProjModules.TetrisGridModule.Runtime.Data;
 
 namespace ProjModules.TetrisGridModule.Runtime
 {
-    public class TetrisGridController : ITetrisGridController
+    public class GridDataController : IGridDataController
     {
         private readonly ITetrisGridConfig _config;
         private readonly GridCellState[,] _grid;
+        private readonly int _width;
+        private readonly int _height;
 
-        public TetrisGridController(ITetrisGridConfig config)
+        public GridDataController(ITetrisGridConfig config)
         {
             _config = config;
 
-            var w = config.Width;
-            var h = config.Height;
-            if (w <= 0 || h <= 0)
+            _width = config.Width;
+            _height = config.Height;
+            if (_width <= 0 || _height <= 0)
                 throw new ArgumentException("Invalid tetris grid size.");
 
-            _grid = new GridCellState[w, h];
+            _grid = new GridCellState[_width, _height];
         }
+
+        public int Width => _width;
+        public int Height => _height;
 
         public GridCellState GetCell(int x, int y)
         {
             // check width
-            if (x < 0 || x >= _grid.GetLength(0))
+            if (x < 0 || x >= _width)
                 return GridCellState.Error;
 
             // check height
-            if (y < 0 || y >= _grid.GetLength(1))
+            if (y < 0 || y >= _height)
                 return GridCellState.Error;
 
             return _grid[x, y];
@@ -94,7 +99,8 @@ namespace ProjModules.TetrisGridModule.Runtime
                     if (!isTetromino)
                         continue;
 
-                    if (!checkCellCallback(cellState))
+                    var currentCellState = _grid[minX + x, minY + y];
+                    if (!checkCellCallback(currentCellState))
                         continue;
 
                     _grid[minX + x, minY + y] = cellState;
@@ -153,11 +159,11 @@ namespace ProjModules.TetrisGridModule.Runtime
                 return false;
 
             int maxX = minX + width - 1;
-            if (maxX >= _grid.GetLength(0))
+            if (maxX >= _width)
                 return false;
 
             int maxY = minY + height - 1;
-            if (maxY >= _grid.GetLength(1))
+            if (maxY >= _height)
                 return false;
 
             return true;

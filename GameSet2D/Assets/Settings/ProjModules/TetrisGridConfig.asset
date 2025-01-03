@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73d1c0011c5449aab73cba20b9b147fc, type: 3}
   m_Name: TetrisGridConfig
   m_EditorClassIdentifier: 
+  _tmp: {fileID: 11400000, guid: c4484e2e756abc54c94f94e6080b0ade, type: 2}
   _width: 10
   _height: 20
   _view: {fileID: 1136764946551022980, guid: 87cfcf689f7f06042b1ace9b04fd5395, type: 3}

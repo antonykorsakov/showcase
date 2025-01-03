@@ -11,8 +11,13 @@ namespace ProjRuntime.TetrisGridModule
 
         public override void InstallBindings()
         {
+            // behaviors
             Container.BindInterfacesTo<TetrisGridBeh>().AsSingle();
-            Container.BindInterfacesTo<TetrisGridController>().AsSingle().WithArguments(_config);
+
+            // main controllers
+            Container.BindInterfacesTo<GridManager>().AsSingle().WithArguments(_config.Tmp);
+            Container.BindInterfacesTo<GridDataController>().AsSingle().WithArguments(_config);
+            Container.BindInterfacesTo<GridRendererController>().AsSingle().WithArguments(_config);
         }
     }
 }
