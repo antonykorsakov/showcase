@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace ProjModules.TetrisGridModule.Runtime.Data
@@ -6,12 +7,16 @@ namespace ProjModules.TetrisGridModule.Runtime.Data
         menuName = "Configs/" + nameof(TetrisGridConfig), order = 'T')]
     public class TetrisGridConfig : ScriptableObject, ITetrisGridConfig
     {
-        [SerializeField] private int _width;
-        [SerializeField] private int _height;
-        [SerializeField] private int _spawnAreaHeight;
+        [SerializeField] private int _width = 10;
+        [SerializeField] private int _height = 20;
+        [SerializeField] private TetrisGridView _view;
+        [SerializeField] private TileData[] _shapes;
 
         public int Width => _width;
         public int Height => _height;
-        public int SpawnAreaHeight => _spawnAreaHeight;
+        public TetrisGridView View => _view;
+
+        public TileData GetTetrominoShape(TetrominoType type)
+            => Array.Find(_shapes, item => item.Type == type);
     }
 }

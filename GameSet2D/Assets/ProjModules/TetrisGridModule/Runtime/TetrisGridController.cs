@@ -13,7 +13,7 @@ namespace ProjModules.TetrisGridModule.Runtime
             _config = config;
 
             var w = config.Width;
-            var h = config.Height + config.SpawnAreaHeight;
+            var h = config.Height;
             if (w <= 0 || h <= 0)
                 throw new ArgumentException("Invalid tetris grid size.");
 

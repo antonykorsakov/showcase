@@ -14,4 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _width: 10
   _height: 20
-  _spawnAreaHeight: 0
+  _view: {fileID: 1136764946551022980, guid: 87cfcf689f7f06042b1ace9b04fd5395, type: 3}
+  _shapes:
+  - _type: 1
+    _gridCell: {fileID: 11400000, guid: b6a03079d15f4a140b4c728f902c89f7, type: 2}
+  - _type: 2
+    _gridCell: {fileID: 11400000, guid: c4484e2e756abc54c94f94e6080b0ade, type: 2}

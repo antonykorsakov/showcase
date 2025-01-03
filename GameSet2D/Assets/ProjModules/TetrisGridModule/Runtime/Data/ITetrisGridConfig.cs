@@ -4,6 +4,8 @@ namespace ProjModules.TetrisGridModule.Runtime.Data
     {
         int Width { get; }
         int Height { get; }
-        int SpawnAreaHeight { get; }
+        TetrisGridView View { get; }
+
+        TileData GetTetrominoShape(TetrominoType type);
     }
 }
