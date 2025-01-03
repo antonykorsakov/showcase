@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ProjModules.TetrisGridModule.Runtime
+namespace ProjModules.TetrisGridModule.Runtime.Data
 {
     [CreateAssetMenu(fileName = nameof(TetrisGridConfig),
         menuName = "Configs/" + nameof(TetrisGridConfig), order = 'T')]

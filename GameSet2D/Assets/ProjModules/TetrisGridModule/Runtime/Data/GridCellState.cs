@@ -1,4 +1,4 @@
-namespace ProjModules.TetrisGridModule.Runtime
+namespace ProjModules.TetrisGridModule.Runtime.Data
 {
     public enum GridCellState : byte
     {

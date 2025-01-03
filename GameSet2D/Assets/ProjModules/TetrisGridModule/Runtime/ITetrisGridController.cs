@@ -1,3 +1,5 @@
+using ProjModules.TetrisGridModule.Runtime.Data;
+
 namespace ProjModules.TetrisGridModule.Runtime
 {
     public interface ITetrisGridController
