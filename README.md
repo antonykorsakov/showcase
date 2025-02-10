@@ -8,9 +8,9 @@
 
 # Project Tetris (OOP)
 
-💻 **Source Code:** [GitHub Repository](https://github.com/antonykorsakov/showcase_oop/tree/main/ProjectTetris2D)  
+💻 **Source Code:** [GitHub Repository](https://github.com/antonykorsakov/showcase_oop)  
 🌐 **Live Demo:** [WebGL Build](https://antonykorsakov.github.io/showcase_oop/)  
 
 # Project Courier (ECS)
 
-💻 **Source Code:** [GitHub Repository](https://github.com/antonykorsakov/showcase_ecs/tree/main/ProjectCourier)  
+💻 **Source Code:** [GitHub Repository](https://github.com/antonykorsakov/showcase_ecs)  
